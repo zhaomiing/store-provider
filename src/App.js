@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">React</h1>
+          <h1 className="App-title">Redux 实现原理演示</h1>
         </header>
         <p className="buttons">
           <button onClick={add}>+</button>
@@ -25,27 +25,23 @@ class App extends Component {
   }
 }
 
-const mapState = state => {
-  return {
+const mapState = state => ({
     num: state.num
+});
+const mapDispatch = dispatch => ({
+  add() {
+    dispatch({
+      type: 'ADD'
+    })
+  },
+  minus() {
+    dispatch({
+      type: 'MINUS'
+    })
+  },
+  async() {
+    dispatch(asyncAdd)
   }
-};
-const mapDispatch = dispatch => {
-  return {
-    add() {
-      dispatch({
-        type: 'ADD'
-      })
-    },
-    minus() {
-      dispatch({
-        type: 'MINUS'
-      })
-    },
-    async() {
-      dispatch(asyncAdd)
-    }
-  }
-}
+});
 
 export default connectHOC(App, mapState, mapDispatch);

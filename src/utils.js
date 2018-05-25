@@ -14,12 +14,18 @@ export function randomKey() {
  * @returns
  */
 export function formatDate(date) {
-  const y = date.getFullYear();
-  const m = date.getMonth() + 1;
-  const d = date.getDate();
-  const h = date.getHours();
-  const mm = date.getMinutes();
-  const s = date.getSeconds();
+  let y = date.getFullYear();
+  let m = date.getMonth() + 1;
+  let d = date.getDate();
+  let h = date.getHours();
+  let mm = date.getMinutes();
+  let s = date.getSeconds();
+
+  if(m < 10) m = '0' + m;
+  if(d < 10) d = '0' + d;
+  if(h < 10) h = '0' + h;
+  if(mm < 10) mm = '0' + mm;
+  if(s < 10) s = '0' + s;
 
   return y + '-' + m + '-' + d + ' ' + h + ':' + mm + ':' + s
 }
