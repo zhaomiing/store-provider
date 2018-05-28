@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { isEqual, isFunction } from 'lodash';
 
-import { randomKey, formatDate, getDisplayName } from './utils';
+import { randomKey, formatDate, getDisplayName } from './helper';
 
 /**
  * @description 类似 redux store

@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 
-import './index.css';
+import App from './components/App';
 
-import StoreProvider, { createStore } from './StoreProvider';
+import './styles/index.css';
+
+import StoreProvider, { createStore } from './utils/StoreProvider';
 import reducer from './reducer';
 
 const store = createStore(reducer);
